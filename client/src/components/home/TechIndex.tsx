@@ -20,8 +20,36 @@ const philosophies = [
 
 export default function TechIndex() {
   return (
-    <section className="py-24 bg-black">
-      <div className="container">
+    <section className="py-24 bg-black relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full filter blur-3xl opacity-10"
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+          className="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full filter blur-3xl opacity-10"
+        />
+      </div>
+
+      <div className="container relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,15 +69,26 @@ export default function TechIndex() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="relative"
           >
             <div className="space-y-6">
               {skills.map((skill, index) => (
-                <div key={index}>
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
+                  className="group"
+                >
                   <div className="flex justify-between mb-2">
-                    <span className="text-white">{skill.name}</span>
+                    <span className="text-white group-hover:text-primary transition-colors">
+                      {skill.name}
+                    </span>
                     <span className="text-primary">{skill.percentage}%</span>
                   </div>
-                  <div className="h-2 bg-gray-800 rounded-full">
+                  <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-primary rounded-full"
                       initial={{ width: 0 }}
@@ -58,7 +97,7 @@ export default function TechIndex() {
                       viewport={{ once: true }}
                     />
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -73,13 +112,14 @@ export default function TechIndex() {
               <Link key={index} href={item.path}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="cursor-pointer"
+                  className="cursor-pointer relative group"
                 >
                   <Button
                     variant="outline"
-                    className="w-full h-32 text-lg font-semibold text-white border-gray-800 hover:border-primary hover:bg-gray-900"
+                    className="w-full h-32 text-lg font-semibold text-white border-gray-800 group-hover:border-primary group-hover:bg-gray-900 transition-all duration-300 relative overflow-hidden"
                   >
-                    {item.title}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="relative z-10">{item.title}</span>
                   </Button>
                 </motion.div>
               </Link>
