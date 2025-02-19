@@ -10,6 +10,10 @@ import Services from "@/pages/Services";
 import CaseStudies from "@/pages/CaseStudies";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import Mission from "@/pages/mission";
+import Vision from "@/pages/vision";
+import Philosophy from "@/pages/philosophy";
+import Strategy from "@/pages/strategy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,6 +27,10 @@ function Router() {
           <Route path="/case-studies" component={CaseStudies} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path="/mission" component={Mission} />
+          <Route path="/vision" component={Vision} />
+          <Route path="/philosophy" component={Philosophy} />
+          <Route path="/strategy" component={Strategy} />
           <Route component={NotFound} />
         </Switch>
       </main>
