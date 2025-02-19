@@ -18,10 +18,50 @@ const philosophies = [
   { title: "Our Strategy", path: "/strategy" },
 ];
 
+const backgroundWords = [
+  "Innovation",
+  "Technology",
+  "Excellence",
+  "Development",
+  "Design",
+  "Animation",
+  "Future",
+  "Growth",
+];
+
 export default function TechIndex() {
   return (
     <section className="py-24 bg-black relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Animated background text */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+        {backgroundWords.map((word, index) => (
+          <motion.div
+            key={index}
+            className="absolute text-gray-800 text-8xl font-bold opacity-5"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0.02, 0.05, 0.02],
+              x: [-20, 0, -20],
+              y: [-20, 0, -20],
+            }}
+            transition={{
+              duration: 8,
+              delay: index * 0.5,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            style={{
+              left: `${(index % 4) * 25}%`,
+              top: `${Math.floor(index / 4) * 33}%`,
+              transform: `rotate(${index * 45}deg)`,
+            }}
+          >
+            {word}
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Animated gradient backgrounds */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
@@ -54,7 +94,7 @@ export default function TechIndex() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-10"
         >
           <h2 className="text-3xl font-bold mb-4 text-white">
             Improve and Innovate with the Tech Trends
@@ -69,7 +109,7 @@ export default function TechIndex() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative z-10"
           >
             <div className="space-y-6">
               {skills.map((skill, index) => (
@@ -106,7 +146,7 @@ export default function TechIndex() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-2 gap-4 relative z-10"
           >
             {philosophies.map((item, index) => (
               <Link key={index} href={item.path}>
