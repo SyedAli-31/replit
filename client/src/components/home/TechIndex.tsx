@@ -12,10 +12,30 @@ const skills = [
 ];
 
 const philosophies = [
-  { title: "Our Mission", path: "/mission" },
-  { title: "Our Vision", path: "/vision" },
-  { title: "Our Philosophy", path: "/philosophy" },
-  { title: "Our Strategy", path: "/strategy" },
+  {
+    title: "Our Mission",
+    path: "/mission",
+    description: "Empowering businesses through innovative digital solutions",
+    texture: "url('https://www.transparenttextures.com/patterns/brick-wall.png')"
+  },
+  {
+    title: "Our Vision",
+    path: "/vision",
+    description: "Leading the future of digital innovation and transformation",
+    texture: "url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')"
+  },
+  {
+    title: "Our Philosophy",
+    path: "/philosophy",
+    description: "Guided by principles that define who we are",
+    texture: "url('https://www.transparenttextures.com/patterns/dark-geometric.png')"
+  },
+  {
+    title: "Our Strategy",
+    path: "/strategy",
+    description: "Systematic approach to delivering excellence",
+    texture: "url('https://www.transparenttextures.com/patterns/diagmonds.png')"
+  },
 ];
 
 const backgroundWords = [
@@ -113,7 +133,7 @@ export default function TechIndex() {
           >
             <div className="space-y-6">
               {skills.map((skill, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -157,9 +177,19 @@ export default function TechIndex() {
                   <Button
                     variant="outline"
                     className="w-full h-32 text-lg font-semibold text-white border-gray-800 group-hover:border-primary group-hover:bg-gray-900 transition-all duration-300 relative overflow-hidden"
+                    style={{
+                      backgroundImage: item.texture,
+                      backgroundSize: 'auto',
+                      backgroundPosition: 'center',
+                    }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span className="relative z-10">{item.title}</span>
+                    <div className="relative z-10 space-y-2">
+                      <span className="block">{item.title}</span>
+                      <span className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {item.description}
+                      </span>
+                    </div>
                   </Button>
                 </motion.div>
               </Link>
