@@ -24,7 +24,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-24">
+    <section className="py-24 flex justify-center">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Case Studies</h2>

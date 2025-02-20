@@ -24,15 +24,16 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gradient-to-r from-slate-300 via-red-900 to-black backdrop-blur supports-[backdrop-filter]:bg-opacity-80">
+
       <div className="container">
         <div className="flex items-center justify-between h-8 border-b border-gray-800">
           <div className="flex items-center gap-4 text-sm text-gray-400">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center text-black font-semibold gap-2">
               <Mail className="w-4 h-4" />
               <span>contact@devillixart.com</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center text-black font-semibold gap-2">
               <Phone className="w-4 h-4" />
               <span>+1 (555) 123-4567</span>
             </div>
@@ -41,9 +42,12 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/">
             <a className="flex items-center space-x-2">
-              <span className="font-bold text-2xl text-primary tracking-tight">
-                Devillixart
-              </span>
+            <img
+                src="/DEVELLIX-LOGO.png" // Replace with your logo path
+                alt="Devellix Art"
+                width={150}
+                height={84}
+              />
             </a>
           </Link>
 

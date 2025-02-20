@@ -21,7 +21,7 @@ const animations = [
 
 export default function WhatWeDo() {
   return (
-    <section className="py-24 bg-gray-900 relative overflow-hidden">
+    <section className="py-24 bg-red-900 flex justify-center relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-64 h-64 bg-primary rounded-full filter blur-3xl" />

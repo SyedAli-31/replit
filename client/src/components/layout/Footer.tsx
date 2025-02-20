@@ -1,52 +1,138 @@
 import { Link } from "wouter";
 
-export default function Footer() {
+
+
+import React from "react";
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-50 border-t">
-      <div className="container py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div>
-          <h3 className="font-semibold text-lg mb-3">Company</h3>
-          <ul className="space-y-2">
-            <li><Link href="/about"><a className="text-gray-600 hover:text-primary">About Us</a></Link></li>
-            <li><Link href="/case-studies"><a className="text-gray-600 hover:text-primary">Case Studies</a></Link></li>
-            <li><Link href="/contact"><a className="text-gray-600 hover:text-primary">Contact</a></Link></li>
-          </ul>
-        </div>
-        
-        <div>
-          <h3 className="font-semibold text-lg mb-3">Services</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="text-gray-600 hover:text-primary">Custom Development</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-primary">Web Development</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-primary">Mobile Development</a></li>
-          </ul>
+    <footer className="bg-black text-white py-8 ">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Left Column: Logo & Social Media */}
+          <div>
+            <div>
+              <img
+                src="/DEVELLIX-LOGO.png" // Replace with your logo path
+                alt="Devellix Art"
+                width={150}
+                height={84}
+              />
+            </div>
+            <p className="text-gray-400 mt-4">Find us on social media</p>
+            <div className="flex space-x-4 mt-2">
+              <a href="#" className="text-gray-400 hover:text-white">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <FaTwitter />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <FaLinkedin />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <FaInstagram />
+              </a>
+            </div>
+          </div>
+
+          {/* Second Column: Services */}
+          <div>
+            <h3 className="text-red-500 font-semibold mb-4">Services</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/services/web-development">
+                  Web Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/mobile-development">
+                  Mobile Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/on-demand-apps">
+                  On-Demand Apps
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/dedicated-team">
+                  Dedicated Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/ios-android">
+                  iOS & Android
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Third Column: Company */}
+          <div>
+            <h3 className="text-red-500 font-semibold mb-4">Company</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/about">About Company</Link>
+              </li>
+              <li>
+                <Link href="/customers">For Customers</Link>
+              </li>
+              <li>
+                <Link href="/blog-news">Blog & News</Link>
+              </li>
+              <li>
+                <Link href="/careers-reviews">Careers & Reviews</Link>
+              </li>
+              <li>
+                <Link href="/sitemap">Sitemap</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Fourth Column: Learn */}
+          <div>
+            <h3 className="text-red-500 font-semibold mb-4">Learn</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <Link href="/learn/social-media-platform">
+                  Social Media Platform
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn/business-management-tools">
+                  Business Management Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn/gambling-betting-web-apps">
+                  Gambling & Betting Web Apps
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn/sports-fitness-app">
+                  Sports and Fitness App
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn/saas">
+                  Software as a Service (SaaS)
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h3 className="font-semibold text-lg mb-3">Connect</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="text-gray-600 hover:text-primary">LinkedIn</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-primary">Twitter</a></li>
-            <li><a href="#" className="text-gray-600 hover:text-primary">GitHub</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="font-semibold text-lg mb-3">Contact</h3>
-          <address className="text-gray-600 not-italic">
-            <p>123 Tech Street</p>
-            <p>Silicon Valley, CA 94025</p>
-            <p className="mt-2">contact@orientsoft.com</p>
-            <p>+1 (555) 123-4567</p>
-          </address>
-        </div>
-      </div>
-
-      <div className="border-t">
-        <div className="container py-6 text-center text-gray-600">
-          <p>&copy; 2024 OrientSoft. All rights reserved.</p>
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-800 mt-8 pt-4 text-center">
+          <p className="text-gray-500 text-sm">
+            Copyright © 2021 Devellix Art. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

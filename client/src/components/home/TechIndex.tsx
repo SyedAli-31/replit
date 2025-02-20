@@ -51,7 +51,7 @@ const backgroundWords = [
 
 export default function TechIndex() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 flex justify-center bg-black relative overflow-hidden">
       {/* Animated background text */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         {backgroundWords.map((word, index) => (

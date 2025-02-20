@@ -3,22 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ChevronRight } from "lucide-react";
 
+
+
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden min-h-screen flex items-center">
+    <div className="relative overflow-hidden  min-h-screen flex items-center">
       {/* Video Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-11114-large.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <video
+        src="/videos/furistic.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      />
 
       <div className="container relative z-20">
         <motion.div

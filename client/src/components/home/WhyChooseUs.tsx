@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
 const features = [
@@ -14,7 +13,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-20 flex justify-center bg-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -38,8 +37,8 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-white">WHY CHOOSE US</h2>
-            <div className="text-gray-400 space-y-4">
+            <h2 className="text-3xl font-bold mb-6 md:ml-0 ml-6 text-white">WHY CHOOSE US</h2>
+            <div className="text-gray-400 md:ml-0 ml-4 space-y-4">
               <p>
                 Our teams of experts are the driving force behind all of our successes.
                 Together, we believe that anything is possible and work relentlessly to meet

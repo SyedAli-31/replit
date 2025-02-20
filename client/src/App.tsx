@@ -16,6 +16,7 @@ import Philosophy from "@/pages/philosophy";
 import Strategy from "@/pages/strategy";
 import NotFound from "@/pages/not-found";
 
+
 function Router() {
   return (
     <div className="min-h-screen flex flex-col">

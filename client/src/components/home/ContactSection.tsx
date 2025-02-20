@@ -26,7 +26,7 @@ const steps = [
 
 export default function ContactSection() {
   return (
-    <section className="py-24 bg-gray-900">
+    <section className="py-24 flex justify-center bg-gray-900">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
